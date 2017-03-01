@@ -1,7 +1,12 @@
 from ReadLocationNames import locations
 import tensorflow as tf
 
-def concept_cell(x, c, r, W):
+input_dimension = 8     # SHA-256
+init = tf.global_variables_initializer()
+
+
+def concept_cell():
+    # One-Dimensional
     # sess = tf.InteractiveSession()
     rbf_num = len(locations)
     alpha = 1.0
