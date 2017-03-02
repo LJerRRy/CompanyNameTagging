@@ -6,7 +6,6 @@ init = tf.global_variables_initializer()
 
 
 def concept_cell():
-    # One-Dimensional
     # sess = tf.InteractiveSession()
     rbf_num = len(locations)
     alpha = 1.0
@@ -21,7 +20,7 @@ def concept_cell():
     w = tf.ones([rbf_num, 1])  # Could be variables
     x = tf.tile(x, [1, rbf_num, 1])
 
-    rbfs = (x - c)          # Broadcasting feature. Cool!
+    rbfs = tf.to_float(x) - c          # Broadcasting feature. Cool!
     rbfs = tf.square(rbfs)
     rbfs = tf.reduce_sum(rbfs, 2)
     rbfs = tf.multiply(rbfs, tf.reciprocal(r))
@@ -30,10 +29,10 @@ def concept_cell():
 
     y = tf.tanh(tf.matmul(rbfs, w))          # No bias? Only one output?
 
-    loss = tf.reduce_mean(tf.square(y - y_)) \
+    loss = tf.reduce_mean(tf.square(y - tf.to_float(y_))) \
         + alpha * tf.reduce_sum(beta * tf.sigmoid(tf.square(c0 - c))) \
         + theta * tf.reduce_sum(tf.square(r))
     train_step = tf.train.GradientDescentOptimizer(0.01).minimize(loss)
-    return y, loss, train_step
+    return x, y_, y, loss, train_step
 
 # sess.run(tf.global_variables_initializer())
