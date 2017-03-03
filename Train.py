@@ -1,10 +1,10 @@
-from ConceptCell import init, concept_cell, input_dimension
+from ConceptCell import concept_cell, input_dimension
 from ReadLocationNames import locations
 import tensorflow as tf
 import hashlib
 
 sess = tf.Session()
-x, y_, pred, loss, step = concept_cell()
+x, y_, pred, loss, step, init = concept_cell()
 epoch_count = 1000
 
 x_training = []
@@ -17,4 +17,5 @@ y_training = [[1]] * len(locations)
 
 sess.run(init)
 for i in range(epoch_count):
+    print('epoch: %i' % i)
     sess.run(step, {x: x_training, y_: y_training})
