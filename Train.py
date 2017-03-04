@@ -5,7 +5,9 @@ import hashlib
 
 sess = tf.Session()
 x, y_, pred, loss, step, init = concept_cell()
+
 epoch_count = 1000
+model_path = './model/location_model'
 
 x_training = []
 for location in locations:
@@ -19,3 +21,5 @@ sess.run(init)
 for i in range(epoch_count):
     print('epoch: %i' % i)
     sess.run(step, {x: x_training, y_: y_training})
+
+
