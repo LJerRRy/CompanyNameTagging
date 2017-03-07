@@ -1,15 +1,17 @@
 from ReadLocationNames import locations
 import tensorflow as tf
 
-input_dimension = 8     # SHA-256
 
+class ConceptCell:
+    input_dimension = 8  # SHA-256
 
-def concept_cell():
-    # sess = tf.InteractiveSession()
     rbf_num = len(locations)
     alpha = 1.0
     beta = 1.0
     theta = 1.0
+    model_path = './model/'
+    saver = None
+    epoch_count = 1000
 
     x = tf.placeholder(tf.int64, shape=[None, 1, input_dimension])
     y_ = tf.placeholder(tf.int64, shape=[None, 1])
@@ -17,24 +19,48 @@ def concept_cell():
     c = tf.Variable(tf.zeros([rbf_num, input_dimension]))  # TODO: initialization strategy
     r = tf.Variable(tf.ones([1, rbf_num]))  # TODO: initialization strategy & division-by-zero
     w = tf.ones([rbf_num, 1])  # Could be variables
-    x_ = tf.tile(x, [1, rbf_num, 1])
+    rbfs = None
+    y = None
+    loss = None
+    sess = None
 
-    rbfs = tf.to_float(x_) - c          # Broadcasting feature. Cool!
-    rbfs = tf.square(rbfs)
-    rbfs = tf.reduce_sum(rbfs, 2)
-    rbfs = tf.multiply(rbfs, tf.reciprocal(r))
-    rbfs = -rbfs
-    rbfs = tf.exp(rbfs)
+    def __init__(self, model_name):
+        x_ = tf.tile(self.x, [1, self.rbf_num, 1])
 
-    y = tf.tanh(tf.matmul(rbfs, w))          # No bias? Only one output?
+        self.rbfs = tf.to_float(x_) - self.c          # Broadcasting feature. Cool!
+        self.rbfs = tf.square(self.rbfs)
+        self.rbfs = tf.reduce_sum(self.rbfs, 2)
+        self.rbfs = tf.multiply(self.rbfs, tf.reciprocal(self.r))
+        self.rbfs = -self.rbfs
+        self.rbfs = tf.exp(self.rbfs)
 
-    loss = tf.reduce_mean(tf.square(y - tf.to_float(y_))) \
-        + alpha * tf.reduce_sum(beta * tf.sigmoid(tf.square(c0 - c))) \
-        + theta * tf.reduce_sum(tf.square(r))
-    train_step = tf.train.GradientDescentOptimizer(0.01).minimize(loss)
+        self.y = tf.tanh(tf.matmul(self.rbfs, self.w))          # No bias? Only one output?
 
-    init = tf.global_variables_initializer()
+        self.loss = tf.reduce_mean(tf.square(self.y - tf.to_float(self.y_))) \
+            + self.alpha * tf.reduce_sum(self.beta * tf.sigmoid(tf.square(self.c0 - self.c))) \
+            + self.theta * tf.reduce_sum(tf.square(self.r))
 
-    return x, y_, y, loss, train_step, init
+        self.model_path += model_name
+        self.sess = tf.Session()
+        self.saver = tf.train.Saver()
 
-# sess.run(tf.global_variables_initializer())
+    def save_params(self):
+        self.saver.save(self.sess, self.model_path)
+        print('Model saved.')
+
+    def restore_params(self):
+        self.saver.restore(self.sess, self.model_path)
+        print('Model restored.')
+
+    def train(self, X, Y_):
+        train_step = tf.train.GradientDescentOptimizer(0.01).minimize(self.loss)
+        init = tf.global_variables_initializer()
+        self.sess.run(init)
+        for i in range(self.epoch_count):
+            print('epoch: %i' % i)
+            self.sess.run(train_step, {self.x: X, self.y_: Y_})
+
+        self.save_params()
+        with self.sess.as_default():
+            print('Total training loss: %i' % self.loss.eval({self.x: X, self.y_: Y_}))
+
