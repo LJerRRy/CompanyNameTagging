@@ -71,8 +71,8 @@ class ConceptCell:
         train_step = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(self.loss)
         init = tf.global_variables_initializer()
         self.sess.run(init)
-        # self.c = tf.assign(self.c, tf.to_double(tf.tile(X[0], [self.rbf_num, 1])), name='c_init')
-        # self.c0 = tf.tile(X[0], [self.rbf_num, 1], name='c0_init')
+        self.c = tf.assign(self.c, tf.to_double(tf.tile(X[0], [self.rbf_num, 1])), name='c_init')
+        self.c0 = tf.tile(X[0], [self.rbf_num, 1], name='c0_init')
 
         with self.sess.as_default():
             print('Total loss before training: %i' % self.loss.eval({self.x: X, self.y_: Y_}))
