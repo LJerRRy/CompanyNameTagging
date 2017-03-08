@@ -13,7 +13,7 @@ class ConceptCell:
     model_path = './model/'
     saver = None
     learning_rate = 0.1
-    epoch_count = 10
+    epoch_count = 0
 
     x = tf.placeholder(tf.int64, shape=[None, 1, input_dimension])
     y_ = tf.placeholder(tf.int64, shape=[None, 1])
@@ -73,6 +73,7 @@ class ConceptCell:
         self.sess.run(init)
         self.c = tf.assign(self.c, tf.to_double(tf.tile(X[0], [self.rbf_num, 1])), name='c_init')
         self.c0 = tf.tile(X[0], [self.rbf_num, 1], name='c0_init')
+        # print(self.sess.run(self.c))
 
         with self.sess.as_default():
             print('Total loss before training: %i' % self.loss.eval({self.x: X, self.y_: Y_}))
