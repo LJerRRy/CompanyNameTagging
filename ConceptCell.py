@@ -17,11 +17,11 @@ class ConceptCell:
 
     x = tf.placeholder(tf.int64, shape=[None, 1, input_dimension])
     y_ = tf.placeholder(tf.int64, shape=[None, 1])
-    # c0 = tf.zeros([rbf_num, input_dimension])
-    c0 = None
-    c = tf.Variable(tf.zeros([rbf_num, input_dimension]))  # TODO: initialization strategy
-    r = tf.Variable(tf.ones([1, rbf_num]))  # TODO: initialization strategy & division-by-zero
-    w = tf.ones([rbf_num, 1])  # Could be variables
+    c0 = tf.zeros([rbf_num, input_dimension], dtype=tf.float64)
+    # c0 = None
+    c = tf.Variable(tf.zeros([rbf_num, input_dimension], dtype=tf.float64))  # TODO: initialization strategy
+    r = tf.Variable(tf.ones([1, rbf_num], dtype=tf.float64))  # TODO: initialization strategy & division-by-zero
+    w = tf.ones([rbf_num, 1], dtype=tf.float64)  # Could be variables
     rbfs = None
     rbf_center_distance = None
     y = None
@@ -34,17 +34,17 @@ class ConceptCell:
     def __init__(self, model_name):
         x_ = tf.tile(self.x, [1, self.rbf_num, 1])
 
-        self.rbfs = tf.to_float(x_) - self.c          # Broadcasting feature. Cool!
+        self.rbfs = tf.to_double(x_) - self.c          # Broadcasting feature. Cool!
         self.rbfs = tf.square(self.rbfs)
         self.rbfs = tf.reduce_sum(self.rbfs, 2)
-        self.rbf_center_distance = tf.reduce_sum(self.rbfs, 1)
+        # self.rbf_center_distance = tf.reduce_sum(self.rbfs, 1)
         self.rbfs = tf.multiply(self.rbfs, tf.reciprocal(self.r))
         self.rbfs = -self.rbfs
         self.rbfs = tf.exp(self.rbfs)
 
         self.y = tf.tanh(tf.matmul(self.rbfs, self.w))          # No bias? Only one output?
 
-        self.loss = tf.reduce_mean(tf.square(self.y - tf.to_float(self.y_))) \
+        self.loss = tf.reduce_mean(tf.square(self.y - tf.to_double(self.y_))) \
             + self.alpha * tf.reduce_sum(self.beta * tf.sigmoid(tf.square(self.c0 - self.c))) \
             + self.theta * tf.reduce_sum(tf.square(self.r))
 
@@ -70,9 +70,10 @@ class ConceptCell:
     def train(self, X, Y_):
         train_step = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(self.loss)
         init = tf.global_variables_initializer()
-
-
         self.sess.run(init)
+        # self.c = tf.assign(self.c, tf.to_double(tf.tile(X[0], [self.rbf_num, 1])), name='c_init')
+        # self.c0 = tf.tile(X[0], [self.rbf_num, 1], name='c0_init')
+
         with self.sess.as_default():
             print('Total loss before training: %i' % self.loss.eval({self.x: X, self.y_: Y_}))
 
