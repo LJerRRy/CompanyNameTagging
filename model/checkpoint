@@ -1,2 +1,2 @@
-model_checkpoint_path: "location_concept_cell"
-all_model_checkpoint_paths: "location_concept_cell"
+model_checkpoint_path: "company_type_concept_cell"
+all_model_checkpoint_paths: "company_type_concept_cell"

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b356b16-9959-47f4-98d8-2ff3304468d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReadCompanyTypes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConceptCell.py" afterPath="$PROJECT_DIR$/ConceptCell.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReadLocationNames.py" afterPath="$PROJECT_DIR$/ReadLocationNames.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py" afterPath="$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingLocationConceptCell.py" afterPath="$PROJECT_DIR$/TrainingLocationConceptCell.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/checkpoint" afterPath="$PROJECT_DIR$/model/checkpoint" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,8 +18,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/CompanyNameTagging$ReadCompanyTypes.coverage" NAME="ReadCompanyTypes Coverage Results" MODIFIED="1489063331465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CompanyNameTagging$TrainingLocationConceptCell.coverage" NAME="TrainingLocationConceptCell Coverage Results" MODIFIED="1489061988844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CompanyNameTagging$pydevd.coverage" NAME="pydevd Coverage Results" MODIFIED="1488520197485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/helpers/pydev" />
+    <SUITE FILE_PATH="coverage/CompanyNameTagging$TrainingCompanyTypeConceptCell.coverage" NAME="TrainingCompanyTypeConceptCell Coverage Results" MODIFIED="1489064603353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CompanyNameTagging$Train.coverage" NAME="Train Coverage Results" MODIFIED="1488547960840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CompanyNameTagging$ConceptCell.coverage" NAME="ConceptCell Coverage Results" MODIFIED="1489056285768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CompanyNameTagging$ReadLocationNames.coverage" NAME="ReadLocationNames Coverage Results" MODIFIED="1488040387391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -34,21 +40,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReadLocationNames.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ReadLocationNames.py">
+      <file leaf-file-name="TrainingCompanyTypeConceptCell.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="323">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingLocationConceptCell.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrainingLocationConceptCell.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrainingLocationConceptCell.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -59,8 +67,8 @@
       <file leaf-file-name="ConceptCell.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConceptCell.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2451">
-              <caret line="150" column="22" lean-forward="true" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
+            <state relative-caret-position="36">
+              <caret line="122" column="21" lean-forward="true" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -68,11 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingCompanyTypeConceptCell.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py">
+      <file leaf-file-name="ReadLocationNames.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ReadLocationNames.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="209">
+              <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadCompanyTypes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ReadCompanyTypes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,10 +121,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ReadLocationNames.py" />
         <option value="$PROJECT_DIR$/Train.py" />
-        <option value="$PROJECT_DIR$/ConceptCell.py" />
+        <option value="$PROJECT_DIR$/ReadLocationNames.py" />
         <option value="$PROJECT_DIR$/TrainingLocationConceptCell.py" />
+        <option value="$PROJECT_DIR$/ReadCompanyTypes.py" />
+        <option value="$PROJECT_DIR$/ConceptCell.py" />
         <option value="$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py" />
       </list>
     </option>
@@ -163,25 +182,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="SearchEverywhereHistoryKey" value="broadcast&#9;null&#9;null" />
   </component>
-  <component name="RunManager" selected="Python.TrainingLocationConceptCell">
-    <configuration default="false" name="ReadLocationNames" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CompanyNameTagging" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ReadLocationNames.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.TrainingCompanyTypeConceptCell">
     <configuration default="false" name="ConceptCell" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -218,24 +219,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="pydevd" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_HOME_DIR$/helpers/pydev" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CompanyNameTagging" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="TrainingLocationConceptCell" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -250,6 +233,42 @@
       <module name="CompanyNameTagging" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TrainingLocationConceptCell.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ReadCompanyTypes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CompanyNameTagging" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ReadCompanyTypes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TrainingCompanyTypeConceptCell" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CompanyNameTagging" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -469,19 +488,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.ReadLocationNames" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ConceptCell" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Train" />
-      <item index="3" class="java.lang.String" itemvalue="Python.pydevd" />
-      <item index="4" class="java.lang.String" itemvalue="Python.TrainingLocationConceptCell" />
+      <item index="0" class="java.lang.String" itemvalue="Python.ConceptCell" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Train" />
+      <item index="2" class="java.lang.String" itemvalue="Python.TrainingLocationConceptCell" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ReadCompanyTypes" />
+      <item index="4" class="java.lang.String" itemvalue="Python.TrainingCompanyTypeConceptCell" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.TrainingLocationConceptCell" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ConceptCell" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Train" />
-        <item index="3" class="java.lang.String" itemvalue="Python.pydevd" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ReadLocationNames" />
+        <item index="0" class="java.lang.String" itemvalue="Python.TrainingCompanyTypeConceptCell" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ReadCompanyTypes" />
+        <item index="2" class="java.lang.String" itemvalue="Python.TrainingLocationConceptCell" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ConceptCell" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Train" />
       </list>
     </recent_temporary>
   </component>
@@ -519,7 +538,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3502455" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44189852" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -577,16 +596,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TrainingLocationConceptCell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ReadLocationNames.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -966,24 +975,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ReadLocationNames.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="209">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py">
+    <entry file="file://$PROJECT_DIR$/ReadCompanyTypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="95">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConceptCell.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2451">
-          <caret line="150" column="22" lean-forward="true" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
+        <state relative-caret-position="36">
+          <caret line="122" column="21" lean-forward="true" selection-start-line="122" selection-start-column="21" selection-end-line="122" selection-end-column="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -992,8 +1001,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TrainingLocationConceptCell.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrainingCompanyTypeConceptCell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

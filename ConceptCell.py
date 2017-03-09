@@ -120,7 +120,7 @@ class ConceptCell:
         self.save_params()
         with self.sess.as_default():
             print('Total training loss: %f' % self.loss.eval({self.x: X, self.y_: Y_}))
-        self.outputs(X, Y_)
+        # self.outputs(X, Y_)
 
     # def resume_training(self, X, Y_):
     #     self.restore_params()

@@ -1,5 +1,7 @@
 import re
 
+# TODO: separate location names from suffixes & correctly recognize
+
 locations = []
 with open('LocationNames.txt', 'r', encoding='utf8') as data:
     for line in data.readlines():
