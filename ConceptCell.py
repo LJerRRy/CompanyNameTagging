@@ -10,7 +10,7 @@ class ConceptCell:
     alpha = 0
     beta = 1.0
     theta = 0.1
-    scaling_factor = 10000
+    scaling_factor = 3
     model_path = None
     saver = None
     learning_rate = 0.1
@@ -35,11 +35,23 @@ class ConceptCell:
     merged_summary = None
     summary_writer = None
 
-    def __init__(self, model_name):
+    def __init__(self, model_name, X, Y_):
         self.model_path = './model/' + model_name
         self.sess = tf.Session()
 
-    def define_model(self):
+        self.rbf_num = len(X)
+        # self.c = tf.Variable(tf.zeros([self.rbf_num, self.input_dimension], dtype=tf.float64), name='c')
+        # r is approximately .13 after 100 epochs with learning rate .1
+        self.r = tf.Variable(tf.ones([1, self.rbf_num], dtype=tf.float64), name='r')
+        self.w = tf.ones([self.rbf_num, 1], dtype=tf.float64, name='w')  # Could be variables
+
+        c0_ = []
+        for pt in X:
+            c0_.append(pt[0])
+        self.c0 = tf.constant(c0_, dtype=tf.float64, name='c0')
+        self.c = tf.Variable(c0_, dtype=tf.float64, name='c')
+        # self.c = tf.assign(self.c, c0_, name='init_c')
+
         x_ = tf.tile(self.x, [1, self.rbf_num, 1], name='expand_x')
 
         self.rbfs = tf.to_double(x_) - self.c          # Broadcasting feature. Cool!
@@ -50,7 +62,7 @@ class ConceptCell:
         self.rbfs = -self.rbfs
         self.rbfs = tf.exp(self.rbfs)
 
-        self.y = tf.tanh(tf.matmul(self.rbfs, self.w), name='squeeze_output')          # No bias? Only one output?
+        self.y = tf.tanh(self.scaling_factor * tf.matmul(self.rbfs, self.w), name='squeeze_output')          # No bias? Only one output?
 
         # Some issues for the original loss definition(sitting quite contentedly in local minimum)
         self.loss = tf.reduce_mean(tf.square(self.y - tf.to_double(self.y_))) \
@@ -77,20 +89,6 @@ class ConceptCell:
         print('Model restored.')
 
     def train(self, X, Y_):
-        self.rbf_num = len(X)
-        # self.c = tf.Variable(tf.zeros([self.rbf_num, self.input_dimension], dtype=tf.float64), name='c')
-        self.r = tf.Variable(tf.ones([1, self.rbf_num], dtype=tf.float64), name='r')
-        self.w = tf.ones([self.rbf_num, 1], dtype=tf.float64, name='w')  # Could be variables
-
-        c0_ = []
-        for pt in X:
-            c0_.append(pt[0])
-        self.c0 = tf.constant(c0_, dtype=tf.float64, name='c0')
-        self.c = tf.Variable(c0_, dtype=tf.float64, name='c')
-        # self.c = tf.assign(self.c, c0_, name='init_c')
-
-        self.define_model()
-
         optimizer = tf.train.GradientDescentOptimizer(self.learning_rate)
         train_step = optimizer.minimize(self.loss)
         init = tf.global_variables_initializer()
@@ -146,6 +144,7 @@ class ConceptCell:
     def outputs(self, X, Y_):
         # return
         # print(self.sess.run(self.c))
+        self.restore_params()
         for i in range(len(X)):
             print('Output on point #%i: %f' % (i, self.sess.run(self.y, {self.x: [X[i]], self.y_: [Y_[i]]})))
 
