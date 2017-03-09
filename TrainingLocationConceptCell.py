@@ -16,5 +16,5 @@ y_training = [[1]] * len(locations)
 
 # location_cell.train(x_training, y_training)
 
-location_cell.train(x_training, y_training)
-
+# location_cell.train(x_training, y_training)
+location_cell.print_r()
