@@ -3,7 +3,6 @@ from ReadLocationNames import locations
 import tensorflow as tf
 import hashlib
 
-epoch_count = 1000
 model_path = './model/location_model'
 location_cell = ConceptCell('location_concept_cell')
 
