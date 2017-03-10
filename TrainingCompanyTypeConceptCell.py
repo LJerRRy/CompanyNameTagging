@@ -15,9 +15,16 @@ y_training = [[1]] * len(company_types)
 company_type_cell = ConceptCell('company_type_concept_cell', x_training, y_training)
 
 
+# TODO: class inheritance & template
+# TODO: check whether model has been trained
 def train_the_model():
-    # company_type_cell.train(x_training, y_training)
+    company_type_cell.train(x_training, y_training)
     company_type_cell.outputs(x_training, y_training)
+
+
+def get_company_type_concept_cell():
+    company_type_cell.restore_params()
+    return company_type_cell
 
 
 def test_the_model():
@@ -26,5 +33,5 @@ def test_the_model():
     company_type_cell.outputs(x_testing, y_testing)
 
 
-train_the_model()
+# train_the_model()
 # test_the_model()

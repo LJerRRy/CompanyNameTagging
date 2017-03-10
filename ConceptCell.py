@@ -144,9 +144,12 @@ class ConceptCell:
     def outputs(self, X, Y_):
         # return
         # print(self.sess.run(self.c))
-        self.restore_params()
+        # self.restore_params()
         for i in range(len(X)):
             print('Output on point #%i: %f' % (i, self.sess.run(self.y, {self.x: [X[i]], self.y_: [Y_[i]]})))
+
+    def activation(self, X):
+        return self.sess.run(self.y, {self.x: X})
 
     def print_r(self):
         self.restore_params()
