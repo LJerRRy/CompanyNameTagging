@@ -2,8 +2,10 @@ import hashlib
 import numpy as np
 
 from ConceptCell import ConceptCell
-from ReadLocationNames import locations
+from ReadLocationNames import read_location_names
 
+
+locations = read_location_names()
 
 x_training = []
 for location in locations:

@@ -35,4 +35,5 @@ class LocationConceptCell(ConceptCell):
     def activation(self, X):
         return super(LocationConceptCell, self).activation(X)
 
-
+    def outputs_for_training_set(self):
+        super(LocationConceptCell, self).outputs(self.x_training, self.y_training)
