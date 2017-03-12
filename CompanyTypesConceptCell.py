@@ -32,6 +32,9 @@ class CompanyTypesConceptCell(ConceptCell):
     def test_model(self):
         super(CompanyTypesConceptCell, self).outputs(self.x_testing, self.y_testing)
 
+    def restore_model(self):
+        super(CompanyTypesConceptCell, self).restore_params()
+
     def activation(self, X):
         return super(CompanyTypesConceptCell, self).activation(X)
 

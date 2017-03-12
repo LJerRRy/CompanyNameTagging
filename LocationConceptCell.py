@@ -32,6 +32,9 @@ class LocationConceptCell(ConceptCell):
     def test_model(self):
         super(LocationConceptCell, self).outputs(self.x_testing, self.y_testing)
 
+    def restore_model(self):
+        super(LocationConceptCell, self).restore_params()
+
     def activation(self, X):
         return super(LocationConceptCell, self).activation(X)
 

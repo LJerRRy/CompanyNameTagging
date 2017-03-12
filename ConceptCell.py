@@ -149,7 +149,7 @@ class ConceptCell:
             print('Output on point #%i: %f' % (i, self.sess.run(self.y, {self.x: [X[i]], self.y_: [Y_[i]]})))
 
     def activation(self, X):
-        return self.sess.run(self.y, {self.x: X})
+        return self.sess.run(self.y, {self.x: X})       # samples * activations per sample
 
     def print_r(self):
         self.restore_params()
